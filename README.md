@@ -17,6 +17,41 @@ This is the project repository for the Brisbane health hack 2019. The goal is to
 
 
 # Getting started:
+## Installing node on Linux/Mac without root permissions
+### Install nvm from https://github.com/creationix/nvm
+1) On your terminal, execute the following command. 
+```sh
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+```
+2) Create the path to nvm
+```sh
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+3) Verify the installation
+```sh
+command -v nvm
+```
+4) Install your version of node using nvm
+```sh
+nvm install 10.10.0
+```
+5) Use your node version
+```sh
+nvm use 10.10.0
+```
+
+## Installing node on Windows without root permissions
+- We need add the node.exe and npm.cmd to system path, so that we can access them from any where.
+- Now append the project folder spath to PATH variable in Environment Variables.
+- We can access the Environment Variables dialog, by right clicking on the Computer > Properties > Advanced system settings > Advanced tab > Environment Variables.
+- Incase if you don’t have permission to access Environment Variables dialog, simply type the following command in Run dialog 
+```
+rundll32 sysdm.cpl,EditEnvironmentVariables
+```
+, this will open the Environment Variables dialog.
+- Go to command line then type node -v then npm -v. These commands should display the currently configured nodejs and npm versions respectively.
+
 ## Data:
 - 3T and 7T MPRAGE and MP2RAGE anatomical scans
 - dicom and nii format
