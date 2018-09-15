@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  main
+    form(action="/process/dltk" method="post")
+      input(type='text' name='file')
+      input(type='submit', value='DLTK Neuronet')
+
+    div.LoaderBalls
+      div.LoaderBalls__item
+      div.LoaderBalls__item
+      div.LoaderBalls__item
+
+    h3(id="result_output")
+
+  script(type='text/javascript').
+    $(document).ready(function () {
+      $('form').submit(function(e) {
+        e.preventDefault();
+        // Loading display
+        $('.LoaderBalls').css('display', 'flex');
+        $(this).prop('disabled', true);
+        $('#result_output').text("");
+
+        $.ajax({
+          url: $(this).attr('action'),
+          type: 'POST',
+          data: $(this).serialize(),
+          success: function(data) {
+            console.log("Completed successfully");
+            // Display success, hide loading
+            $('.LoaderBalls').css('display', 'none');
+            $(this).prop('disabled', false);
+            $('#result_output').text("Completed successfully!");
+          },
+          error: function(data) {
+            console.log("An error occurred");
+            // Display error, hide loading
+            console.log(data);
+            $('.LoaderBalls').css('display', 'none');
+            $(this).prop('disabled', false);
+            $('#result_output').text("Something went wrong!");
+          }
+        });
+      });
+    });
