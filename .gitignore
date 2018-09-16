@@ -1,2 +1,11 @@
 data
 .DS_Store
+*.nii.gz
+*.nii
+*.tar.gz
+!test.nii.gz
+!test.nii
+!test.tar.gz
+*/-p
+*/.ipynb_checkpoints
+*/__pycache__
