@@ -4,5 +4,19 @@ body {
 
 .mlmedic-logo {
   width: 100%;
-  padding: 12px;
+  padding: 8px 0px 0px;
+}
+
+.collapsible {
+  border-color: #D8E8EF;
+  border-radius: 2px;
+}
+
+.collapsible-header {
+  color: #303035;
+  border-color: #D8E8EF;
+}
+
+.dropify-wrapper {
+  border-radius: 2px;
 }
