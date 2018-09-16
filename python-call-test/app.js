@@ -8,6 +8,8 @@ var sassMiddleware = require('node-sass-middleware');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var processRouter = require('./routes/process');
+var uploadRouter = require('./routes/upload');
+
 
 var app = express();
 
@@ -26,10 +28,13 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'segment_out')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/process', processRouter);
+app.use('/upload', uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

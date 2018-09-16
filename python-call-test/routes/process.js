@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var python_call = require('../services/python_call.js');
 
+
+
 router.get('/', function(req, res, next) {
   res.render('process', { title: 'Process' });
   // python_call.dltk_brain('', 'input_file/3T.nii.gz').then(function(response) {

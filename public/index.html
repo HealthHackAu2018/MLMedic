@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- iOS meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="stylesheet" type="text/css" href="css/papaya.css"/>
+    <script type="text/javascript" src="js/papaya.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="js/dropify.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/dropify.css" media="screen,projection"/>
+
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <title>Papaya Viewer</title>
+
+    <script type="text/javascript">
+        var params = [];
+        params["images"] = ["./Talairach_labels_1mm.nii.gz"];
+        var params2 = [];
+        params2["images"] = ["./3T.nii.gz"];
+
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+
+<div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+
+<!--<div class="row">-->
+<!--<div class="col s12 card-panel teal lighten-2"  >  test </div>-->
+<!--</div>-->
+
+
+
+
+<div class="row">
+    <div class="col s8 teal lighten-2">
+        <input type="file" id="input-file-now" class="dropify">
+        <div class="papaya " data-params="params"></div>
+        <div class="papaya" data-params="params2">
+
+
+        </div>
+    </div>
+
+    <div class="col s4  lighten-1">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">hdr_strong</i>ukbb neuronet brain segmentation</div>
+                <div class="collapsible-body"><span>NeuroNet: Fast and Robust Reproduction of Multiple Brain Image
+                    Segmentation Pipelines, Published by Martin Rajchl and Nick Pawlowski and Daniel Rueckert and
+                    Paul M. Matthews and Ben Glocker. <a href=" https://github.com/DLTK/models/tree/master/ukbb_neuronet_brain_segmentation">Github source</a>
+                    </span>
+                    <br>
+                    <a class="waves-effect waves-light btn">button</a>
+
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">hdr_strong</i>u net brain tumor(Comming soon)</div>
+                <div class="collapsible-body"><span>TensorLayer: A Versatile Library for Efficient Deep Learning
+                    Development, published by Dong, Hao and Supratak, Akara and Mai, Luo and Liu, Fangde and
+                    Oehmichen, Axel and Yu, Simiao and Guo, Yike.</span>
+                    <br>
+                    <a
+                            href=" https://github.com/zsdonghao/u-net-brain-tumor">Github source</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+</div>
+
+
+<script>
+
+    M.AutoInit();
+
+    $('.dropify').dropify();
+
+</script>
+</body>
+</html>
