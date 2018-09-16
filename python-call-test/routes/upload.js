@@ -6,7 +6,7 @@ router.use(fileUpload({preserveExtension: true}));
 // var formidable = require('formidable');
 // var busboy = require('connect-busboy');
 // router.use(busboy());
-file_loc = 'input_file/upload.nii.gz';
+file_loc = 'public/images/upload.nii.gz';
 
 // app.use(fileUpload(());
 // var python_call = require('../services/python_call.js');

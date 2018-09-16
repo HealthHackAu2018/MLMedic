@@ -2,7 +2,7 @@ extends layout
 
 block content
   main
-    div(class="papaya-holder" data-params="params")
+    div(class="papaya" data-params="params")
 
     div(class="sidebar")
       form(ref="uploadForm" id="upload" action="/upload" method="post" encType="multipart/form-data")
@@ -24,9 +24,10 @@ block content
   script(type = 'text/javascript' src='javascripts/papaya.js')
 
   script(type='text/javascript').
-    $(document).ready(function () {
 
+    $(document).ready(function () {
       var params = [];
+
       $('form#process').submit(function(e) {
         e.preventDefault();
         // Loading display
@@ -82,15 +83,24 @@ block content
             // params['images'] = ['./' + data];
             // var params = [];
             // params['images'] = [data];
-
-            var myContainer = papayaContainers[0];
-            // papaya.Container.addImage(0, data);
-            papaya.Container.syncViewers = true;
-            params['images'] = [data];
-            console.log("Trying to update papaya");
-            papaya.Container.startPapaya()
             // var params = [];
+            // params['images'] = ['images/upload.nii.gz'];
+            // papayaContainers[0].viewer.resetViewer();
+            fr = new FileReader();
+            papayaContainers[0].viewer.loadBaseImage(fr.readAsBinaryString('images/upload.nii.gz'));
+            // var params = [];
+            // params['images'] = ['images/upload.nii.gz'];
+            // var myContainer = papayaContainers[0];
+            // myContainer.resetViewer(0);
+            // myContainer.addViewer('images/upload.nii.gz');
+            // papayaContainers[0].viewer.loadImage('images/upload.nii.gz');
+            // papaya.Container.addImage(0, data);
+            // papaya.Container.syncViewers = true;
             // params['images'] = [data];
+            // console.log("Trying to update papaya");
+            // papaya.Container.startPapaya();
+            // var params = [];
+            // params['images'] = ['images/upload.nii.gz'];
 
 
           },
