@@ -124,3 +124,7 @@ https://github.com/DLTK/models/tree/master/ukbb_neuronet_brain_segmentation
 
 ## Data to play with
 https://cloudstor.aarnet.edu.au/plus/s/JGt804o3cGXc5xf
+
+
+## Dicom to nii converter in python3:
+pip install git+git://github.com/mvdoc/dcmstack@bf/importsys
