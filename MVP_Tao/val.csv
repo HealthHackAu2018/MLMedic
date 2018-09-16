@@ -1,0 +1,2 @@
+id,t1,fsl_fast,fsl_first,spm_tissue,malp_em,malp_em_tissue
+5404127,./input_nii/test.nii.gz,./input_nii/T1_brain_seg.nii.gz,./input_nii/all_fast_firstseg.nii.gz,./input_nii/T1_brain_seg_spm.nii.gz,./input_nii/T1_MALPEM.nii.gz,./input_nii/T1_MALPEM_tissues.nii.gz

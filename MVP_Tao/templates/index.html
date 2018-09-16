@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TF JS example</title>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>-->
+    <link rel="stylesheet" href="../static/frontend/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h1 class="title">MLMEDIC</h1>
+<h2 class="title">Upload a .nii file and ask AI to segment it for you </h2>
+<form action = "upload" method = "POST" enctype="multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+
+
+<main class="file-form">
+    
+	
+	
+    <button type="submit" class="file-form__button file-form__button_predict" id="predict">Segment It! </button>
+    <!-- <button type="submit" class="file-form__button file-form__button_clear" id="clear">Clear</button>
+    <span class="file-form__files" id="number-of-files"></span>
+	-->
+</main>
+<div id="preview"></div>
+<script src="../static/frontend/main.js"></script>
+</body>
+</html>
