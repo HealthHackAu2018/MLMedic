@@ -90,16 +90,13 @@
   width: 25px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
-  /* background-color: #303035; */
   color: #D8E8EF;
-  background-color: #303035;
+  background-color: rgba(48, 48, 53, .8);
   vertical-align: middle;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
   border: none;
-  /* box-sizing: border-box; */
-  /* outline: 0 */
 }
 
 .papaya-main-decrement {
@@ -111,15 +108,13 @@
   width: 25px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
-  background-color: #303035;
+  background-color: rgba(48, 48, 53, .8);
   color: #D8E8EF;
   vertical-align: middle;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
   border: none;
-  /* box-sizing: border-box; */
-  /* outline: 0 */
 }
 
 .papaya-main-swap {
@@ -127,12 +122,11 @@
   border-radius: 2px;
   -webkit-border-radius: 2px;
   font-size: 14px;
-  height: 25px;
-  background-color: #303035;
+  height: 28px;
+  background-color: rgba(48, 48, 53, .8);
   color: #D8E8EF;
-
   border: none;
-  /* outline: 0 */
+  padding: 0 12px;
 }
 
 .papaya-main-goto-center {
@@ -140,24 +134,23 @@
   border-radius: 2p;
   -webkit-border-radius: 2px;
   font-size: 14px;
-  height: 25px;
-  background-color: #303035;
+  height: 28px;
+  background-color: rgba(48, 48, 53, .8);
   color: #D8E8EF;
   border: none;
-  /* outline: 0 */
+  padding: 0 12px;
 }
 
 .papaya-main-goto-origin {
   -webkit-appearance: none;
   border-radius: 2px;
   -webkit-border-radius: 2px;
-  background-color: #303035;
+  background-color: rgba(48, 48, 53, .8);
   color: #D8E8EF;
   font-size: 14px;
-  height: 25px;
+  height: 28px;
   border: none;
-  /* background-color: #303035; */
-  /* outline: 0 */
+  padding: 0 12px;
 }
 
 .papaya-slider-slice {
@@ -191,17 +184,12 @@
   z-index: 100;
   position: absolute;
   border-radius: 2px 0 2px 2px;
-  /* border: solid 2px darkgray; */
   padding: 4px;
-  margin: 0
+  margin: 0;
+
 }
 
 .papaya-menu li {
-  /* font-size: 12px; */
-  /* font-family: sans-serif; */
-  /* padding: 4px 2px; */
-  /* color: #b5cbd3; */
-  /* cursor: pointer; */
   list-style-type: none;
   font-size: 14px;
   padding: 4px 8px;
@@ -209,8 +197,6 @@
 
 .papaya-menu-label {
   font-size: 14px;
-  /* font-family: sans-serif; */
-  /* font-weight: bold; */
   padding: 6px 12px;
   cursor: pointer;
   vertical-align: text-bottom
@@ -226,7 +212,7 @@
   padding: 3px 8px 0 8px;
   cursor: default;
   vertical-align: text-bottom;
-  color: white
+  color: #D8E8EF;
 }
 
 .papaya-menu-icon {
