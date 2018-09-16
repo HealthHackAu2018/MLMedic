@@ -28,12 +28,17 @@ python-call-test/input_file/
 .idea/**/libraries
 
 python-call-test/.idea/
+
+
 *.nii.gz
 *.nii
 *.tar.gz
 !test.nii.gz
 !test.nii
 !test.tar.gz
-*/-p
-*/.ipynb_checkpoints
-*/__pycache__
+
+MVP_Tao/trained_models/*
+
+MVP_Tao/-p
+MVP_Tao/.ipynb_checkpoints
+MVP_Tao/__pycache__

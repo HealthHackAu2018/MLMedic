@@ -1,7 +1,10 @@
-##New Version - How to Use
- - place input nii file in "input_nii" folder. to make configuration easier, rename the file to "test.nii.gz" 
- - unzip/untar the trained models, place them under "trained_models" folder, name them correctly according to the config file
- - run "python deploy.py --csv val.csv --config config_spm_tissue.json" change config file when required 
+## New Version - How to Use
+ - put spm_tissue model in the trained_models folder
+ - they will be some dependencies issues, it will need DLTK, Flask and etc...
+ - run app.py 
+
+
+### Below is the old reame file
 
 
 

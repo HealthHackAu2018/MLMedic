@@ -1,8 +1,8 @@
 {
  "protocols": ["malp_em"],
  "num_classes": [139], 
- "model_path": "/tmp/neuronet/models/malp_em",
- "out_segm_path": "/tmp/neuronet/out/malp_em",
+ "model_path": "trained_models/malp_em",
+ "out_segm_path": "output_nii",
  "learning_rate": 0.001,
  "network": {
      "filters": [16, 32, 64, 128],

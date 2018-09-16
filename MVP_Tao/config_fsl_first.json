@@ -1,8 +1,8 @@
 {
  "protocols": ["fsl_first"],
  "num_classes": [16], 
- "model_path": "/tmp/neuronet/models/fsl_first",
- "out_segm_path": "/tmp/neuronet/out/fsl_first",
+  "model_path": "trained_models/fsl_first",
+ "out_segm_path": "output_nii",
  "learning_rate": 0.001,
  "network": {
      "filters": [16, 32, 64, 128],
