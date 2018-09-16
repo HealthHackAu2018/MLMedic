@@ -1,0 +1,1 @@
+this is where the segmented nii files are stored

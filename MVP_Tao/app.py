@@ -58,13 +58,14 @@ def upload():
 	  
 
 # DLTK specific content end
+@app.route("/input_nii/<path:path>", methods=["GET","POST"])
+def input_js(path):
+    return send_from_directory('input_nii', path)
 
 
 @app.route("/output_nii/<path:path>", methods=["GET","POST"])
 def send_js(path):
     return send_from_directory('output_nii', path)
-
-
 
 @app.route("/", methods=["GET"])
 def main():
@@ -225,7 +226,7 @@ def model():
 
 @app.route('/<path:path>')
 def load_shards(path):
-    return send_from_directory('model_js', path)
+    return send_from_directory('static', path)
 
 
 def preprocessing(file):
