@@ -69,7 +69,7 @@ rundll32 sysdm.cpl,EditEnvironmentVariables
 - https://github.com/kaczmarj/nobrainer
 - https://github.com/GUR9000/Deep_MRI_brain_extraction
 
-## Example how a current applicaiton of a model looks like:
+## Example how a current application of a model looks like:
 https://github.com/DLTK/models/tree/master/ukbb_neuronet_brain_segmentation
 
 - install miniconda https://conda.io/miniconda.html or anaconda
