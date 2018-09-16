@@ -2,10 +2,10 @@ extends layout
 
 block content
   main
-    div(class="papaya" data-params="params")
+    div(class="papaya-holder" data-params="params")
 
     div(class="sidebar")
-      form(ref="uploadForm" id="uploadForm" action="/upload" method="post" encType="multipart/form-data")
+      form(ref="uploadForm" id="upload" action="/upload" method="post" encType="multipart/form-data")
         input(type="file" name="uploadFile")
         input(type="submit" value="Upload file")
 
@@ -22,10 +22,11 @@ block content
       h3(id="result_output")
 
   script(type = 'text/javascript' src='javascripts/papaya.js')
+
   script(type='text/javascript').
-    var params = [];
-    params['images'] = [''];
     $(document).ready(function () {
+
+      var params = [];
       $('form#process').submit(function(e) {
         e.preventDefault();
         // Loading display
@@ -54,4 +55,91 @@ block content
           }
         });
       });
+
+      $('form#upload').submit(function(e) {
+        e.preventDefault();
+
+        var form = $('form#upload')[0];
+
+        var data = new FormData(form);
+
+        $("#btnSubmit").prop("disabled", true);
+
+        $.ajax({
+          type: "POST",
+          enctype: 'multipart/form-data',
+          url: $(this).attr('action'),
+          data: data,
+          processData: false,
+          contentType: false,
+          cache: false,
+          timeout: 600000,
+          success: function (data) {
+
+            $("#result_output").text("File uploaded");
+            console.log("SUCCESS : ", data);
+            $("#btnSubmit").prop("disabled", false);
+            // params['images'] = ['./' + data];
+            // var params = [];
+            // params['images'] = [data];
+
+            var myContainer = papayaContainers[0];
+            // papaya.Container.addImage(0, data);
+            papaya.Container.syncViewers = true;
+            params['images'] = [data];
+            console.log("Trying to update papaya");
+            papaya.Container.startPapaya()
+            // var params = [];
+            // params['images'] = [data];
+
+
+          },
+          error: function (e) {
+
+            $("#result_output").text("File upload failed.");
+            console.log("ERROR : ", e);
+            $("#btnSubmit").prop("disabled", false);
+
+          }
+        });
+
+      });
+      // // File uploading
+      // $('form#upload').submit(function (e) {
+      //   e.preventDefault();
+      //   // Loading display
+      //   $('.LoaderBalls').css('display', 'flex');
+      //   $(this).prop('disabled', true);
+      //   $('#result_output').text("");
+      //
+      //   var formData = new FormData();
+      //   formData.append('file', this.uploadFile.files[0]);
+      //   console.log(formData);
+      //   // formData.append('file', e.data.uploadFile, 'testname')
+      //   // var file = $(this).get(0).files;
+      //   // formData.append(file);
+      //
+      //   $.ajax({
+      //     url: $(this).attr('action'),
+      //     type: 'POST',
+      //     data: formData,
+      //     processData: false,
+      //     contentType: 'multipart/form-data',
+      //     success: function (data) {
+      //       console.log("Completed successfully");
+      //       // Display success, hide loading
+      //       $('.LoaderBalls').css('display', 'none');
+      //       $(this).prop('disabled', false);
+      //       $('#result_output').text("Completed successfully!");
+      //     },
+      //     error: function (data) {
+      //       console.log("An error occurred");
+      //       // Display error, hide loading
+      //       console.log(data);
+      //       $('.LoaderBalls').css('display', 'none');
+      //       $(this).prop('disabled', false);
+      //       $('#result_output').text("Something went wrong!");
+      //     }
+      //   });
+      // });
     });

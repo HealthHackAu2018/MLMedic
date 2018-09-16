@@ -29,6 +29,7 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'segment_out')));
+app.use(express.static(path.join(__dirname, 'input_file')));
 
 
 app.use('/', indexRouter);
