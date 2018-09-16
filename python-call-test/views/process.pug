@@ -2,20 +2,31 @@ extends layout
 
 block content
   main
-    form(action="/process/dltk" method="post")
-      input(type='text' name='file')
-      input(type='submit', value='DLTK Neuronet')
+    div(class="papaya" data-params="params")
 
-    div.LoaderBalls
-      div.LoaderBalls__item
-      div.LoaderBalls__item
-      div.LoaderBalls__item
+    div(class="sidebar")
+      form(ref="uploadForm" id="uploadForm" action="/upload" method="post" encType="multipart/form-data")
+        input(type="file" name="uploadFile")
+        input(type="submit" value="Upload file")
 
-    h3(id="result_output")
 
+      form(action="/process/dltk" id="process" method="post")
+        input(type='text' name='file')
+        input(type='submit', value='DLTK Neuronet')
+
+      div.LoaderBalls
+        div.LoaderBalls__item
+        div.LoaderBalls__item
+        div.LoaderBalls__item
+
+      h3(id="result_output")
+
+  script(type = 'text/javascript' src='javascripts/papaya.js')
   script(type='text/javascript').
+    var params = [];
+    params['images'] = [''];
     $(document).ready(function () {
-      $('form').submit(function(e) {
+      $('form#process').submit(function(e) {
         e.preventDefault();
         // Loading display
         $('.LoaderBalls').css('display', 'flex');
